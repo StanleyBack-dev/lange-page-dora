@@ -2,12 +2,12 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { ButtonLink } from "@/design-system/components/ButtonLink";
+import { ButtonLink, buttonClass } from "@/design-system/components/ButtonLink";
 import { Container } from "@/design-system/components/Container";
 import { Logo } from "@/design-system/components/LogoMark";
 import { cn } from "@/design-system/utils/cn";
 import { NAV_LINKS } from "@/features/landing/content/landing-content";
-import { APP_URL } from "@/shared/lib/site";
+import { AppLoginLink } from "@/features/landing/components/AppLoginLink";
 
 // Sticky header: transparent over the dark hero, solid once scrolled.
 export function SiteHeader() {
@@ -65,15 +65,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          {APP_URL ? (
-            <a
-              href={APP_URL}
-              data-track="app-login:header"
-              className="rounded-full px-4 py-2 text-sm font-semibold text-chrome-fg transition-colors hover:bg-white/10"
-            >
-              Entrar
-            </a>
-          ) : null}
+          <AppLoginLink
+            track="app-login:header"
+            className="rounded-full px-4 py-2 text-sm font-semibold text-chrome-fg transition-colors hover:bg-white/10"
+          >
+            Entrar
+          </AppLoginLink>
           <ButtonLink href="#contato" track="cta-contact:header">
             Agendar demonstração
           </ButtonLink>
@@ -117,16 +114,12 @@ export function SiteHeader() {
             >
               Agendar demonstração
             </ButtonLink>
-            {APP_URL ? (
-              <ButtonLink
-                href={APP_URL}
-                variant="ghost"
-                size="lg"
-                track="app-login:mobile-menu"
-              >
-                Entrar no app
-              </ButtonLink>
-            ) : null}
+            <AppLoginLink
+              track="app-login:mobile-menu"
+              className={buttonClass("ghost", "lg")}
+            >
+              Entrar no app
+            </AppLoginLink>
           </div>
         </Container>
       </div>

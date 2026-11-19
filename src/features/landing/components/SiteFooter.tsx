@@ -10,6 +10,7 @@ import {
   whatsappDisplay,
   whatsappLink,
 } from "@/shared/lib/contacts";
+import { AppLoginLink } from "@/features/landing/components/AppLoginLink";
 import { APP_URL } from "@/shared/lib/site";
 
 export function SiteFooter() {
@@ -60,13 +61,12 @@ export function SiteFooter() {
             ))}
             {APP_URL ? (
               <li>
-                <a
-                  href={APP_URL}
-                  data-track="app-login:footer"
+                <AppLoginLink
+                  track="app-login:footer"
                   className="transition-colors hover:text-brand"
                 >
                   Entrar no app
-                </a>
+                </AppLoginLink>
               </li>
             ) : null}
           </ul>
