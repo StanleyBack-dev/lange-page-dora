@@ -1,7 +1,8 @@
 name: Deploy Landing Page to Vercel
 
 # Production deploy: only after CI passes on `master`, ship to Vercel from
-# here (Vercel's git integration doesn't deploy master — see vercel.json).
+# here. Vercel's git integration deploys nothing (no previews either) and
+# the framework is pinned to Next.js: see vercel.json.
 on:
   workflow_run:
     workflows: ["CI"]

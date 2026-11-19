@@ -61,6 +61,14 @@ The platform administrator reads them through the backend queries
 - Contact channels and social networks: `NEXT_PUBLIC_*` variables; an empty
   one is hidden.
 
+## Deploy
+
+Only through GitHub Actions: a PR to `master` runs CI; after the merge,
+`deploy-landing.yml` deploys to Vercel production (secrets `VERCEL_TOKEN`,
+`VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`). `vercel.json` turns off every git
+deployment (no previews) and pins the framework to Next.js. Environment
+variables live in the Vercel project (`dora-site`).
+
 ## Checks
 
 `npx prettier --check src`, `npx tsc --noEmit -p .`, `npx eslint src --quiet`,
