@@ -6,8 +6,11 @@ speed and SEO; only the header, the interactive demo, the contact form and
 the scroll effects hydrate.
 
 ```
-Browser ──▶ Landing (Next.js BFF: /api/leads, /api/events) ──(X-Internal-Api-Key)──▶ backend-dora (GraphQL, `landing` module)
+Browser ──▶ Landing (Next.js BFF: /api/leads, /api/events) ──(LANDING_API_KEY)──▶ backend-dora (GraphQL, `landing` module)
 ```
+
+The landing page has its own API key (`LANDING_API_KEY`): backend-dora
+accepts it only on the landing mutations, never on the app's API.
 
 The landing page has no database of its own: the contact form and the
 analytics live in backend-dora's `landing` module (tables `tb_landing_leads`
@@ -17,7 +20,7 @@ and `tb_landing_events`), which e-mails each lead through Brevo to
 ## Run locally
 
 1. backend-dora running on `http://localhost:4000` with its migrations applied.
-2. `cp .env.example .env.local` and set `INTERNAL_API_KEY` (same as the
+2. `cp .env.example .env.local` and set `LANDING_API_KEY` (same as the
    backend's) and the contact channels.
 3. `npm install && npm run dev` → http://localhost:3001
 

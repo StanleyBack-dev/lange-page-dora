@@ -13,7 +13,8 @@ const schema = z.object({
     .enum(["development", "production", "test"])
     .default("development"),
   BACKEND_URL: z.url(),
-  INTERNAL_API_KEY: z.string().min(16),
+  /** This site's key: the backend accepts it only on the landing mutations. */
+  LANDING_API_KEY: z.string().min(32),
   /** HMAC key of the contact form token (time trap). */
   LEAD_FORM_SECRET: z.string().min(32),
   /** Cloudflare Turnstile; empty = no challenge (local dev only). */

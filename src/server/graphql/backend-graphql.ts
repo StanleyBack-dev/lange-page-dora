@@ -24,8 +24,9 @@ type GraphqlResponse<T> = {
 };
 
 // Single gateway to the backend's GraphQL API (backend-dora, `landing`
-// module): the internal key, plus the visitor's IP and browser so the API
-// can rate limit and filter bots. The landing page has no sessions.
+// module): this site's own key (LANDING_API_KEY, accepted only on the
+// landing mutations), plus the visitor's IP and browser so the API can rate
+// limit and filter bots. The landing page has no sessions.
 export async function backendGraphql<T>(
   query: string,
   variables: Record<string, unknown>,
@@ -35,7 +36,7 @@ export async function backendGraphql<T>(
   const headers: Record<string, string> = {
     accept: "application/json",
     "content-type": "application/json",
-    "x-internal-api-key": env.INTERNAL_API_KEY,
+    "x-internal-api-key": env.LANDING_API_KEY,
   };
   const ip = clientIp(client);
   if (ip) headers["x-client-ip"] = ip;
