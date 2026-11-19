@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/StanleyBack-dev/lange-page-dora/compare/v0.2.1...v0.3.0) (2026-11-19)
+
+
+### Features
+
+* **landing:** show a loading screen when opening the app ([9e67868](https://github.com/StanleyBack-dev/lange-page-dora/commit/9e67868f4d49cf3f674c580dec2e59af61df3e1a))
+* **landing:** show a loading screen when opening the app ([38003b4](https://github.com/StanleyBack-dev/lange-page-dora/commit/38003b49b7d4bf7ac3ae0f1bd421cc87925ca57e))
+
 ## [0.2.1](https://github.com/StanleyBack-dev/lange-page-dora/compare/v0.2.0...v0.2.1) (2026-11-19)
 
 
