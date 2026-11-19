@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/StanleyBack-dev/lange-page-dora/compare/v0.2.0...v0.2.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* **deploy:** pin the Next.js framework and deploy only through Actions ([316a176](https://github.com/StanleyBack-dev/lange-page-dora/commit/316a1769980648ef9b5ca0cd554941a04022af60))
+* **deploy:** pin the Next.js framework and deploy only through Actions ([ff6944a](https://github.com/StanleyBack-dev/lange-page-dora/commit/ff6944a923fa2fe8a68f59b70bcf36e2ae631a44))
+
 ## [0.2.0](https://github.com/StanleyBack-dev/lange-page-dora/compare/v0.1.0...v0.2.0) (2026-11-19)
 
 
